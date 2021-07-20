@@ -11,3 +11,4 @@ mongoose.connect(config.dbURI(), {
 });
 
 // schema and models
+require('./account')

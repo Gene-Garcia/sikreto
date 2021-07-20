@@ -2,7 +2,6 @@ require('dotenv').config();
 
 // database odm package
 const mongoose = require('mongoose');
-const encryption = require('mongoose-encryption')
 
 const accountSchema = mongoose.Schema({
     username: {
@@ -19,12 +18,13 @@ const accountSchema = mongoose.Schema({
     }
 });
 
-// encryption
-accountSchema.plugin(encryption, { 
-    secret: process.env.ENCRYPTION_KEY,
-    decryptPostSave: false, // for improved performance because by default after saving, the variable will be updated with decrypted value
-    encryptedFields: ['password']
-});
+// encryption - deprecated - 'mongoose-encryption'
+// const encryption = require('mongoose-encryption')
+// accountSchema.plugin(encryption, { 
+//     secret: process.env.ENCRYPTION_KEY,
+//     decryptPostSave: false, // for improved performance because by default after saving, the variable will be updated with decrypted value
+//     encryptedFields: ['password']
+// });
 
 // store/set the scema to mongoose
 mongoose.model('Account', accountSchema);

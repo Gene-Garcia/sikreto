@@ -33,7 +33,7 @@ router.post('/register',(req, res) => {
             console.log(err);
             res.redirect('/register');
         } else {
-            res.send('success');
+            res.render('sikreto');
         }
     })
 });
@@ -55,7 +55,7 @@ router.post('/login', (req, res) => {
             res.redirect('/login');
         } else {
             if (doc === null) res.redirect('/login')
-            else res.json(JSON.stringify(doc));
+            else res.render('sikreto');
         }
     });
 });

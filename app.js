@@ -16,7 +16,7 @@ app.use(express.static(`${__dirname}/public`));
 // routes
 // default
 app.get('/', (req, res) => {
-    res.redirect('/login');
+    res.redirect('/register');
 })
 // un-authenticated
 app.use('/', require(`${__dirname}/routes/default`))

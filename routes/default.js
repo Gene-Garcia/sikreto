@@ -12,8 +12,6 @@ router.get('/register', (req, res) => {
 });
 
 router.post('/register',(req, res) => {
-    console.log(req.body);
-
     // research for the best to handle validation modularly
     // check for null values
 
@@ -47,15 +45,20 @@ router.post('/login', (req, res) => {
     // check for null values
 
     Account.findOne({
-        email: req.body.email,
-        password: req.body.password
+        email: req.body.email
     }, (err, doc) => {
         if (err) {
             console.log(err);
             res.redirect('/login');
         } else {
+
             if (doc === null) res.redirect('/login')
-            else res.render('sikreto');
+            else {
+                // check password
+                if (doc.password == req.body.password) res.render('sikreto');
+                else res.redirect('/login')
+            }
+
         }
     });
 });

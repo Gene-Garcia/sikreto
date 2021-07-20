@@ -38,5 +38,27 @@ router.post('/register',(req, res) => {
     })
 });
 
+router.get('/login', (req, res) => {
+    res.render('login');
+});
+
+router.post('/login', (req, res) => {
+    
+    // check for null values
+
+    Account.findOne({
+        email: req.body.email,
+        password: req.body.password
+    }, (err, doc) => {
+        if (err) {
+            console.log(err);
+            res.redirect('/login');
+        } else {
+            if (doc === null) res.redirect('/login')
+            else res.json(JSON.stringify(doc));
+        }
+    });
+});
+
 // export router for app.js
 module.exports = router;

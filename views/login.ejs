@@ -1,0 +1,25 @@
+<%- include('./partials/header') -%>
+
+<section id="login-section" class="reg-log-section text-center">
+
+    <h1 class="my-5">Login</h1>
+
+    <div class="col-4 m-auto">
+        <form class="" action="/login" method="POST">
+            <div class="">
+                <input type="email" name="email" class="form-control form-control-top" placeholder="Email address" required>
+            </div>
+
+            <div class="mb-2">
+                <input type="password" name="password" class="form-control form-control-bottom" placeholder="Password" required>
+            </div>
+
+            <div>
+                <input type="submit" class="btn btn-primary w-100" value="Login">
+            </div>
+        </form>
+    </div>
+
+</section>
+
+<%- include('./partials/footer') -%>

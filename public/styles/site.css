@@ -1,21 +1,21 @@
 /* styling for un-authenticated pages access */
 
-#register-section .form-control{
+.reg-log-section .form-control{
     border-radius: 0;
     margin-bottom: -1px;
     padding: 15px;
 }
 
-#register-section .form-control-top{
+.reg-log-section .form-control-top{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
 }
 
-#register-section .form-control-bottom{
+.reg-log-section .form-control-bottom{
     border-bottom-right-radius: 10px;
 }
 
-#register-section .btn {
+.reg-log-section .btn {
     border-radius: 0px 8px 8px 8px;
 }

@@ -2,6 +2,10 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+
+// modules
+const encryptConfig = require(`../config/encrypt_config.js`)
 
 // db models
 const Account = mongoose.model('Account');
@@ -21,19 +25,27 @@ router.post('/register',(req, res) => {
 
     // check if email and username exists
 
-    const newAccount = Account({
-        email: req.body.email,
-        username: req.body.username,
-        password: req.body.password
-    });
-    newAccount.save((err) => {
-        if (err){
-            console.log(err);
-            res.redirect('/register');
-        } else {
-            res.render('sikreto');
+    bcrypt.hash(req.body.password, encryptConfig.SALT_ROUNDS, function(err, hash) {
+
+        if (err) res.redirect('/register')
+        else {
+            const newAccount = Account({
+                email: req.body.email,
+                username: req.body.username,
+                password: hash
+            });
+            newAccount.save((err) => {
+                if (err){
+                    console.log(err);
+                    res.redirect('/register');
+                } else {
+                    res.render('sikreto');
+                }
+            })
         }
-    })
+
+    });
+
 });
 
 router.get('/login', (req, res) => {
@@ -55,8 +67,16 @@ router.post('/login', (req, res) => {
             if (doc === null) res.redirect('/login')
             else {
                 // check password
-                if (doc.password == req.body.password) res.render('sikreto');
-                else res.redirect('/login')
+                bcrypt.compare(req.body.password, doc.password, function(err, result) {
+
+                    if (err) res.redirect('/login')
+                    else {
+                        
+                        if (result) res.render('sikreto');
+                        else res.redirect('/login')
+                    }
+
+                });
             }
 
         }

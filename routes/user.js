@@ -3,8 +3,8 @@ const express = require('express');
 const router = express.Router();
 
 // router.get(...)
-router.get('/login', (req, res) => {
-    res.render('test');
+router.get('/me', (req, res) => {
+    res.render('test-auth');
 });
 
 // export router for app.js

@@ -11,5 +11,10 @@ router.get('/sikreto', (req, res) => {
     }
 });
 
+router.get('/logout', function (req, res) {
+    req.logout();
+    res.redirect('/');
+});
+
 // export router for app.js
 module.exports = router;

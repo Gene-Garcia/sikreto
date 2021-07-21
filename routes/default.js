@@ -48,50 +48,37 @@ router.post('/register', (req, res) => {
         }
     })
 
-    // if (err) res.redirect('/register')
-    // else {
-    //     const newAccount = Account({
-    //         email: req.body.email,
-    //         username: req.body.username,
-    //         password: req.body.password
-    //     });
-    //     newAccount.save((err) => {
-    //         if (err) {
-    //             console.log(err);
-    //             res.redirect('/register');
-    //         } else {
-    //             res.render('sikreto');
-    //         }
-    //     })
-    // }
-
 });
 
 router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', (req, res, next) => {
 
-    // check for null values
+    console.log(`next: ${next}`);
 
-    Account.findOne({
-        email: req.body.email
-    }, (err, doc) => {
+    passport.authenticate('local', function (err, account, found) {
+
         if (err) {
-            console.log(err);
-            res.redirect('/login');
+            console.log(`1 ${err}`);
+            return next(err);
+        } else if (!found) { // boolean, I think false if no user is found
+            console.log(`2 ${found}`);
+            return res.redirect('/login');
         } else {
-
-            if (doc === null) res.redirect('/login')
-            else {
-                // check password
-                if (doc.password == req.body.password) res.render('sikreto');
-                else res.redirect('/login');
-            }
-
+            req.logIn(account, function (err) { // account contains 
+                if (err) {
+                    console.log(`3 ${err}`);
+                    return next(err);
+                } else {
+                    return res.render('sikreto');
+                }
+            });
         }
-    });
+        
+    })(req, res, next);
+
 });
 
 // export router for app.js

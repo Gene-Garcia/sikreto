@@ -3,8 +3,16 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+// cookies-session package
+const passport = require('passport');
+
 // db models
 const Account = mongoose.model('Account');
+
+// embed authentication strategy to model, and serialization
+passport.use(Account.createStrategy());
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
 
 // routes
 router.get('/register', (req, res) => {

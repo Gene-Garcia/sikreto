@@ -34,17 +34,10 @@ router.post('/register', (req, res) => {
         username: req.body.username
     }, req.body.password, (err, account) => {
         if (err) {
-            console.log('here')
-            res.json(err);
+            res.redirect('/register');
         } else {
-            Account.authenticate()(req.body.email, req.body.password, (err, result) => {
-                if (err) {
-                    console.log('here2')
-                    res.json(err);
-                } else {
-                    res.json(result);
-                }
-            })
+            console.log(`${account.username} register success`);
+            res.redirect('/login');
         }
     })
 
@@ -56,27 +49,25 @@ router.get('/login', (req, res) => {
 
 router.post('/login', (req, res, next) => {
 
-    console.log(`next: ${next}`);
-
-    passport.authenticate('local', function (err, account, found) {
+    passport.authenticate('local', function (err, user, info) {
+        // console.log(JSON.stringify(info)); // {"name":"IncorrectUsernameError","message":"Password or username is incorrect"}, or undefined if success
 
         if (err) {
             console.log(`1 ${err}`);
             return next(err);
-        } else if (!found) { // boolean, I think false if no user is found
-            console.log(`2 ${found}`);
+        } else if (!user) { // false if no user is found
             return res.redirect('/login');
         } else {
-            req.logIn(account, function (err) { // account contains 
+            req.logIn(user, function (err) { // account contains 
                 if (err) {
                     console.log(`3 ${err}`);
                     return next(err);
                 } else {
-                    return res.render('sikreto');
+                    return res.redirect('/account/sikreto');
                 }
             });
         }
-        
+
     })(req, res, next);
 
 });

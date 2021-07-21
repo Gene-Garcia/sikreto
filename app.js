@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 // un-authenticated
 app.use('/', require(`${__dirname}/routes/default`))
 // // authenticated
-app.use('/user', require(`${__dirname}/routes/user`))
+app.use('/account', require(`${__dirname}/routes/account`))
 
 // port
 const port = process.env.PORT || 5000;

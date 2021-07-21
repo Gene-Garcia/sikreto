@@ -3,8 +3,12 @@ const express = require('express');
 const router = express.Router();
 
 // router.get(...)
-router.get('/me', (req, res) => {
-    res.render('test-auth');
+router.get('/sikreto', (req, res) => {
+    if (req.isAuthenticated()){
+    res.render('sikreto');
+    } else {
+        res.send('Not Authenticated!');
+    }
 });
 
 // export router for app.js

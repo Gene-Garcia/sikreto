@@ -3,6 +3,9 @@ require('dotenv').config();
 // cookies-session packages
 const passportLocalMongoose = require('passport-local-mongoose');
 
+// other plugin packages
+var findOrCreate = require('mongoose-findorcreate')
+
 // database odm package
 const mongoose = require('mongoose');
 
@@ -18,7 +21,9 @@ const accountSchema = mongoose.Schema({
     password: {
         type: String
         // required: 'Password is required' // password must not be required because passport-local-mongoose does not initially set a password
-    }
+    },
+    google_id: { type: String },
+    facebook_id: { type: String }
 });
 
 // encryption - deprecated - 'mongoose-encryption'
@@ -31,6 +36,9 @@ const accountSchema = mongoose.Schema({
 
 // embedding passport-local-mongoose method to Account Model schema
 accountSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
+
+// embedding the findOrCreate method to Account Model Schema
+accountSchema.plugin(findOrCreate);
 
 // store/set the scema to mongoose
 mongoose.model('Account', accountSchema);

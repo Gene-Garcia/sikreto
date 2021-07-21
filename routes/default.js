@@ -9,10 +9,11 @@ const passport = require('passport');
 // db models
 const Account = mongoose.model('Account');
 
-// embed authentication strategy to model, and serialization
+// embed authentication strategy to model
 passport.use(Account.createStrategy());
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
+// the following 2 lines is relocated back to app.js
+// passport.serializeUser(Account.serializeUser());
+// passport.deserializeUser(Account.deserializeUser());
 
 // routes
 router.get('/register', (req, res) => {

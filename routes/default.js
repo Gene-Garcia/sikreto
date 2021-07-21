@@ -29,22 +29,41 @@ router.post('/register', (req, res) => {
 
     // check if email and username exists
 
-    if (err) res.redirect('/register')
-    else {
-        const newAccount = Account({
-            email: req.body.email,
-            username: req.body.username,
-            password: req.body.password
-        });
-        newAccount.save((err) => {
-            if (err) {
-                console.log(err);
-                res.redirect('/register');
-            } else {
-                res.render('sikreto');
-            }
-        })
-    }
+    Account.register({
+        email: req.body.email,
+        username: req.body.username
+    }, req.body.password, (err, account) => {
+        if (err) {
+            console.log('here')
+            res.json(err);
+        } else {
+            Account.authenticate()(req.body.email, req.body.password, (err, result) => {
+                if (err) {
+                    console.log('here2')
+                    res.json(err);
+                } else {
+                    res.json(result);
+                }
+            })
+        }
+    })
+
+    // if (err) res.redirect('/register')
+    // else {
+    //     const newAccount = Account({
+    //         email: req.body.email,
+    //         username: req.body.username,
+    //         password: req.body.password
+    //     });
+    //     newAccount.save((err) => {
+    //         if (err) {
+    //             console.log(err);
+    //             res.redirect('/register');
+    //         } else {
+    //             res.render('sikreto');
+    //         }
+    //     })
+    // }
 
 });
 
@@ -67,7 +86,7 @@ router.post('/login', (req, res) => {
             if (doc === null) res.redirect('/login')
             else {
                 // check password
-                if ( doc.password == req.body.password ) res.render('sikreto');
+                if (doc.password == req.body.password) res.render('sikreto');
                 else res.redirect('/login');
             }
 

@@ -16,8 +16,8 @@ const accountSchema = mongoose.Schema({
         required: 'Email is required'
     },
     password: {
-        type: String,
-        required: 'Password is required'
+        type: String
+        // required: 'Password is required' // password must not be required because passport-local-mongoose does not initially set a password
     }
 });
 
@@ -30,7 +30,7 @@ const accountSchema = mongoose.Schema({
 // });
 
 // embedding passport-local-mongoose method to Account Model schema
-accountSchema.plugin(passportLocalMongoose);
+accountSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 
 // store/set the scema to mongoose
 mongoose.model('Account', accountSchema);

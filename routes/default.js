@@ -1,6 +1,7 @@
 // package
 const express = require('express');
 const router = express.Router();
+const _ = require('lodash');
 
 // cookies-session package
 const passport = require('passport');
@@ -67,7 +68,23 @@ router.post('/login', (req, res, next) => {
 });
 
 router.get('/sikretos', (req, res) => {
-    res.send('All of user secrets posted anonymously');
+
+    let rawSikretos = []
+
+    Account.find({}, '-_id sikretos', (err, docs) => {
+
+        docs.forEach(doc => {
+            rawSikretos.push(doc.sikretos);
+        });
+
+        const sikretos = _.flattenDeep(rawSikretos)
+        console.log(sikretos);
+
+        res.render('sikretos', {
+            sikretos: sikretos
+        });
+
+    });
 });
 
 // export router for app.js

@@ -10,6 +10,7 @@ const session = require('express-session');
 
 // oauth packages
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 
 // app config
 const app = express()
@@ -64,6 +65,25 @@ passport.use(new GoogleStrategy({
     }, (err, user) => {
       return cb(err, user); // it think this called by the serialize or deserialize
     });
+  }
+));
+
+// Embedding Facebbok OAuth to Passport
+passport.use(new FacebookStrategy({
+    clientID: process.env.FACEBOOK_APP_ID,
+    clientSecret: process.env.FACEBOOK_APP_SECRET,
+    callbackURL: "https://localhost:3000/auth/fb/sikreto"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    console.log(profile);
+
+    // Account.findOrCreate({ 
+    //     google_id: profile.id,
+    //     email: profile.emails[0].value,
+    //     username: profile.name.givenName.toLocaleLowerCase() + profile.name.familyName.toLocaleLowerCase()
+    // }, (err, user) => {
+    //   return cb(err, user); // it think this called by the serialize or deserialize
+    // });
   }
 ));
 

@@ -8,26 +8,28 @@
 
 <div class="create-sikreto mx-5 px-5">
 
-    <div class="row gy-0 gx-2">
-        <div class="col-8">
-            <div class="input-group post-sikreto-input border border-2 rounded-3"
-                aria-describedby="anonymousPostingHelp">
-                <input type="password" id="sikreto-desc" class="form-control border-0"
-                    placeholder="You know what to do">
-                <button class="btn px-2 border-0 see-password" type="button">
-                    <i class="bi bi-eye"></i>
-                </button>
+    <form action="/user/sikreto" method="POST">
+        <div class="row gy-0 gx-2">
+            <div class="col-8">
+                <div class="input-group post-sikreto-input border border-2 rounded-3"
+                    aria-describedby="anonymousPostingHelp">
+                    <input type="password" id="sikreto-desc" name="text" class="form-control border-0"
+                        placeholder="You know what to do">
+                    <button class="btn px-2 border-0 see-password" type="button">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
+                <div id="anonymousPostingHelp" class="form-text">
+                    Sikreto.com will anonymously post your secret, and not allow any public users or Sikreto accounts
+                    see your name. The date today will also be recorded along with your sikreto.
+                </div>
             </div>
-            <div id="anonymousPostingHelp" class="form-text">
-                Sikreto.com will anonymously post your secret, and not allow any public users or Sikreto accounts see
-                your name.
-            </div>
-        </div>
 
-        <div class="col-4">
-            <input type="submit" value="Go anonymous" class="btn btn-dark w-100 border-0 post-sikreto-button">
+            <div class="col-4">
+                <input type="submit" value="Go anonymous" class="btn btn-dark w-100 border-0 post-sikreto-button">
+            </div>
         </div>
-    </div>
+    </form>
 
 
 </div>
@@ -35,7 +37,7 @@
 <div class="sikreto-list mt-5">
 
     <a class=" mb-3">Read your Sikretos?</a>
-    
+
 
     <ul class="list-group mt-3">
         <li class="list-group-item">

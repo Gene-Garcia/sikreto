@@ -23,7 +23,11 @@ const accountSchema = mongoose.Schema({
         // required: 'Password is required' // password must not be required because passport-local-mongoose does not initially set a password
     },
     google_id: { type: String },
-    facebook_id: { type: String }
+    facebook_id: { type: String },
+    sikretos: [{
+        value: { type: String },
+        date: { date: Date }
+    }]
 });
 
 // encryption - deprecated - 'mongoose-encryption'

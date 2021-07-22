@@ -1,19 +1,12 @@
 // package
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
 
 // cookies-session package
 const passport = require('passport');
 
 // db models
-const Account = mongoose.model('Account');
-
-// embed authentication strategy to model
-passport.use(Account.createStrategy());
-// the following 2 lines is relocated back to app.js
-// passport.serializeUser(Account.serializeUser());
-// passport.deserializeUser(Account.deserializeUser());
+const Account = require('mongoose').model('Account');
 
 // routes
 router.get('/register', (req, res) => {
@@ -73,6 +66,9 @@ router.post('/login', (req, res, next) => {
 
 });
 
+router.get('/sikretos', (req, res) => {
+    res.send('All of user secrets posted anonymously');
+});
 
 // export router for app.js
 module.exports = router;

@@ -11,7 +11,7 @@ router.get('/google',
 router.get('/google/sikreto', 
     passport.authenticate('google', { failureRedirect: "/login" }), 
     (req, res) => {
-        res.redirect('/account/sikreto');
+        res.redirect('/user/sikreto');
     });
 
 // this redirects to fb login
@@ -22,7 +22,7 @@ router.get('/fb',
 router.get('/fb/sikreto', 
     passport.authenticate('facebook', { failureRedirect: "/login" }), 
     (req, res) => {
-        res.redirect('/account/sikreto');
+        res.redirect('/user/sikreto');
     }); 
 
 // export router for app.js

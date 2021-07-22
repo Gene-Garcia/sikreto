@@ -10,15 +10,15 @@ const cert = fs.readFileSync('./cert.pem');
 const express = require('express');
 const ejs = require('ejs');
 
-// cookies-session packages
+// cookies-session-authentication packages
 const passport = require('passport');
 const session = require('express-session');
 
-// oauth packages
+// oauth packages and strategy
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 
-// app config
+// app configs
 const app = express()
 // cookies-session config
 app.use(session({
@@ -39,11 +39,13 @@ app.use(express.static(`${__dirname}/public`));
 // modules
 // instantiates db and mongoose for the enire runtime
 const mongoose = require(`${__dirname}/models/database.js`);
-
 // call the models
 const Account = require('mongoose').model('Account');
 
-// passport serialization
+// embed local authentication strategy to model, local means manual registration
+passport.use(Account.createStrategy());
+
+// passport cookie write and read
 passport.serializeUser(function (user, done) {
     done(null, user.id);
 });
@@ -60,8 +62,6 @@ passport.use(new GoogleStrategy({
     callbackURL: "https://localhost:3000/auth/google/sikreto" // create anothe file for auth
   },
   function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
-
     // findOrCreate is not a mongoose method
     // we need installed another package
     Account.findOrCreate({ 
@@ -102,9 +102,9 @@ app.use('/', require(`${__dirname}/routes/default`))
 // authentications
 app.use('/auth', require(`${__dirname}/routes/authentication`))
 // authenticated
-app.use('/account', require(`${__dirname}/routes/account`))
+app.use('/user', require(`${__dirname}/routes/user`))
 
-// port
+// Listener and HTTPS server creation
 const port = process.env.PORT || 3000;
 const server = https.createServer({key: key, cert: cert }, app);
 server.listen(port, () => { console.log('Application listening to port ' + port + '. https://localhost:3000/') });

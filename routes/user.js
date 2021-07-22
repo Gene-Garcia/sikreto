@@ -2,12 +2,14 @@
 const express = require('express');
 const router = express.Router();
 
-// router.get(...)
+// router
+// landing page of the user
+// allowed to post their secrets
 router.get('/sikreto', (req, res) => {
     if (req.isAuthenticated()){
     res.render('sikreto');
     } else {
-        res.send('Not Authenticated!');
+        res.redirect('/');
     }
 });
 

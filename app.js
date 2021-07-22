@@ -57,7 +57,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/sikreto" // create anothe file for auth
+    callbackURL: "https://localhost:3000/auth/google/sikreto" // create anothe file for auth
   },
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile);

@@ -1,1 +1,6 @@
 /* general styles */
+
+.blur-text {
+    text-shadow: 0 0 10px black;
+    color: transparent;
+}m

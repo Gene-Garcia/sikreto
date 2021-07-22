@@ -1,1 +1,10 @@
 /* styling for authenticated pages access */
+
+.create-sikreto .bi {
+
+}
+
+.create-sikreto .post-sikreto-button ,
+.create-sikreto .post-sikreto-input input{
+    padding: 15px 13px;
+}

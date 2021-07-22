@@ -1,7 +1,44 @@
 <%- include('./partials/header') -%>
 
-<% sikretos.forEach(e => { %>
-    <p><%= e.value %></p>
-<% }) %>
+<h1>Sikretos</h1>
+
+<div class="sikretos-list mt-5">
+    <div class="row g-4">
+
+        <% if (sikretos.length > 0) { %>
+
+        <% sikretos.forEach(e => { %>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p class="card-text">
+                        <%= e.value  %>
+                    </p>
+                    <p class="card-text text-end"><small class="text-muted">Posted on <%= e.date %></small></p>
+                </div>
+            </div>
+        </div>
+
+        <% }) %>
+
+        <% } else { %>
+
+        <div class="col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p class="card-text">
+                        OMG NO Secrets recorded yet.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <% } %>
+
+    </div>
+</div>
+
+
 
 <%- include('./partials/footer') -%>

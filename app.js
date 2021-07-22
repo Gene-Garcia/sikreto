@@ -1,5 +1,11 @@
 require('dotenv').config();
 
+// creating a secure connection
+const fs = require('fs');
+const https = require('https');
+const key = fs.readFileSync('./key.pem');
+const cert = fs.readFileSync('./cert.pem');
+
 // packages
 const express = require('express');
 const ejs = require('ejs');
@@ -101,4 +107,5 @@ app.use('/account', require(`${__dirname}/routes/account`))
 
 // port
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log('Application listening to port ' + port))
+const server = https.createServer({key: key, cert: cert }, app);
+server.listen(port, () => { console.log('Application listening to port ' + port + '. https://localhost:3000/') });

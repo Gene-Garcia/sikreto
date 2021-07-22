@@ -16,7 +16,7 @@ router.get('/google/sikreto',
 
 // this redirects to fb login
 router.get('/fb', 
-    passport.authenticate('facebook', { scope: ['public_profile', 'email']} ));
+    passport.authenticate('facebook'));
 
 // callback from fb
 router.get('/fb/sikreto', 

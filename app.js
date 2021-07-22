@@ -78,18 +78,17 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: "https://localhost:3000/auth/fb/sikreto"
+    callbackURL: "https://localhost:3000/auth/fb/sikreto",
+    profileFields: ['id', 'displayName', 'name', 'email']
   },
   function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
-
-    // Account.findOrCreate({ 
-    //     google_id: profile.id,
-    //     email: profile.emails[0].value,
-    //     username: profile.name.givenName.toLocaleLowerCase() + profile.name.familyName.toLocaleLowerCase()
-    // }, (err, user) => {
-    //   return cb(err, user); // it think this called by the serialize or deserialize
-    // });
+    Account.findOrCreate({ 
+        facebook_id: profile.id,
+        email: profile.emails[0].value,
+        username: profile.name.givenName.toLocaleLowerCase() + profile.name.familyName.toLocaleLowerCase()
+    }, (err, user) => {
+      return cb(err, user); // it think this called by the serialize or deserialize
+    });
   }
 ));
 

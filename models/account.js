@@ -26,7 +26,7 @@ const accountSchema = mongoose.Schema({
     facebook_id: { type: String },
     sikretos: [{
         value: { type: String },
-        date: { date: Date }
+        date: { type: String }
     }]
 });
 

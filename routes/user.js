@@ -9,24 +9,21 @@ const Account = require('mongoose').model('Account');
 // landing page of the user
 // allowed to post their secrets
 router.get('/sikreto', (req, res) => {
-    if (req.isAuthenticated()){
-    res.render('sikreto');
-    } else {
-        res.redirect('/');
-    }
+    if (!req.isAuthenticated()) res.redirect('/');
+        
+    res.render('sikreto', {sikretos: req.user.sikretos});
 });
 
 router.post('/sikreto', (req, res) => {
-    console.log(req.user);
+    if (!req.isAuthenticated()) res.redirect('/');
 
     const sikreto = {
         value: req.body.text,
-        date: Date.now()
+        date: new Date(Date.now()).toDateString()
     }
 
     req.user.sikretos.push(sikreto)
     Account.updateOne({_id: req.user._id}, req.user, (err, result) => {
-        console.log(result)
         if (err) console.log(err);
         res.redirect('/user/sikreto')
     })

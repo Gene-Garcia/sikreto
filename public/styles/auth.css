@@ -8,3 +8,7 @@
 .create-sikreto .post-sikreto-input input{
     padding: 15px 13px;
 }
+
+.sikreto-list small {
+    font-size: 12px;
+}

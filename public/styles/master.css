@@ -1,5 +1,26 @@
 /* general styles */
 
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
+
+/* color variables */
+:root {
+    --darker: #222831;
+    --dark: #393e46;
+    --accent: #00B8E4;
+    --accent-neon: #04D9FF;
+    --light: #EEEEEE;
+
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+
+    --accent-font: 'Concert One', cursive;
+    --heading-font: 'Poppins', sans-serif;
+    --text-font: 'Roboto', sans-serif;
+}
+
 .blur-text {
     text-shadow: 0 0 10px black;
     color: transparent;

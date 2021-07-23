@@ -10,6 +10,60 @@
     background-repeat: no-repeat;
 }
 
+.reg-log-section .hero .display{
+    font-family: var(--heading-font);
+    color: white;
+    font-size: 30px;
+    font-weight: var(--bold);
+}
+
+.reg-log-section .hero .sub-display {
+    font-family: var(--text-font);
+    color: white;
+    font-size: 18px;
+    font-weight: var(--regular);
+}
+
+.reg-log-section .form-container .form-container-child {
+    width: 650px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .reg-log-section .form-container .form-container-child {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    .reg-log-section .form-container .form-container-child {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 764px) {
+    .reg-log-section .form-container .form-container-child {
+        width: 550px;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .reg-log-section .form-container .form-container-child {
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .reg-log-section .form-container .form-container-child {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    .reg-log-section .form-container .form-container-child {
+        width: 300px;
+    }
+}
+
 .reg-log-section .sub-heading {
     font-family: var(--heading-font);
     color: var(--darker);
@@ -34,33 +88,33 @@
     font-size: 14px;
 }
 
-.reg-log-section .form-control{
+.reg-log-section .form-control {
     background-color: var(--light);
     font-size: 15px;
     padding: 10px 15px 10px 15px;
     border: none;
 }
 
-.reg-log-section .form-control::placeholder{
+.reg-log-section .form-control::placeholder {
     opacity: 80%;
 }
 
 .reg-log-section .input-group,
-.reg-log-section .input-group-text{
+.reg-log-section .input-group-text {
     background-color: var(--light);
 }
 
-.reg-log-section .input-group{
+.reg-log-section .input-group {
     border-left: var(--accent) 4px solid;
 }
 
-.reg-log-section .input-group-text{
+.reg-log-section .input-group-text {
     padding-left: 10px;
     padding-right: 5px;
-    border:none
+    border: none
 }
 
-.reg-log-section .bi{
+.reg-log-section .bi {
     font-size: 20px;
 }
 
@@ -72,11 +126,11 @@
     font-weight: var(--medium);
 }
 
-.forgot-password:hover{
+.forgot-password:hover {
     color: var(--accent);
 }
 
-.btn-sikreto-accent{
+.btn-sikreto-accent {
     background-color: var(--accent);
     font-weight: var(--medium);
     color: white;
@@ -86,6 +140,25 @@
     padding-bottom: 9px;
 }
 
+.btn-sikreto-outline-accent{
+    background-color: transparent;
+    font-weight: var(--medium);
+    color: white;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    border: white solid 1px;
+    border-radius: 27px;
+}
+
+.btn-sikreto-outline-accent:hover{
+    background-color: transparent;
+    color: var(--dark);
+    border-color: white;
+}
+
 .oauth p {
     font-family: var(--text-font);
     font-weight: var(--bold);
@@ -93,29 +166,8 @@
     opacity: 70%;
 }
 
-
-.oauth img{
+.oauth img {
     height: 40px;
     margin-left: 5px;
     margin-right: 5px;
 }
-
-/* .reg-log-section .form-control {
-    border-radius: 0;
-    margin-bottom: -1px;
-    padding: 15px;
-}
-
-.reg-log-section .form-control-top {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-
-}
-
-.reg-log-section .form-control-bottom {
-    border-bottom-right-radius: 10px;
-}
-
-.reg-log-section .btn {
-    border-radius: 0px 8px 8px 8px;
-} */

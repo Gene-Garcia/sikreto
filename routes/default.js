@@ -10,11 +10,11 @@ const passport = require('passport');
 const Account = require('mongoose').model('Account');
 
 // routes
-router.get('/register', (req, res) => {
-    res.render('register');
+router.get('/signup', (req, res) => {
+    res.render('signup');
 });
 
-router.post('/register', (req, res) => {
+router.post('/signup', (req, res) => {
     // research for the best to handle validation modularly
     // check for null values
 
@@ -29,20 +29,20 @@ router.post('/register', (req, res) => {
         username: req.body.username
     }, req.body.password, (err, account) => {
         if (err) {
-            res.redirect('/register');
+            res.redirect('/signup');
         } else {
-            console.log(`${account.username} register success`);
-            res.redirect('/login');
+            console.log(`${account.username} signup success`);
+            res.redirect('/signin');
         }
     })
 
 });
 
-router.get('/login', (req, res) => {
-    res.render('login');
+router.get('/signin', (req, res) => {
+    res.render('signin');
 });
 
-router.post('/login', (req, res, next) => {
+router.post('/signin', (req, res, next) => {
 
     passport.authenticate('local', function (err, user, info) {
         // console.log(JSON.stringify(info)); // {"name":"IncorrectUsernameError","message":"Password or username is incorrect"}, or undefined if success
@@ -51,14 +51,14 @@ router.post('/login', (req, res, next) => {
             console.log(`1 ${err}`);
             return next(err);
         } else if (!user) { // false if no user is found
-            return res.redirect('/login');
+            return res.redirect('/signin');
         } else {
             req.logIn(user, function (err) { // account contains 
                 if (err) {
                     console.log(`3 ${err}`);
                     return next(err);
                 } else {
-                    return res.redirect('/account/sikreto');
+                    return res.redirect('/user/sikreto');
                 }
             });
         }

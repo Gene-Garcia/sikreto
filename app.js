@@ -95,7 +95,7 @@ passport.use(new FacebookStrategy({
 // routes
 // default
 app.get('/', (req, res) => {
-    res.redirect('/register');
+    res.redirect('/signup');
 })
 // un-authenticated
 app.use('/', require(`${__dirname}/routes/default`))

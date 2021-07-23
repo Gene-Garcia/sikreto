@@ -34,7 +34,7 @@ router.post('/sikreto', (req, res) => {
 
 router.get('/logout', function (req, res) {
     req.logout();
-    res.redirect('/');
+    res.redirect('/signin');
 });
 
 // export router for app.js

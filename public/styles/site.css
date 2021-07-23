@@ -1,21 +1,121 @@
 /* styling for un-authenticated pages access */
 
+.reg-log-section {
+    height: 100vh;
+}
+
+.reg-log-section .hero {
+    background-image: url("/images/accent-image-mirrored.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.reg-log-section .sub-heading {
+    font-family: var(--heading-font);
+    color: var(--darker);
+    opacity: 50%;
+    font-size: 24px;
+    font-weight: var(--bold);
+}
+
+.reg-log-section form {
+    font-family: var(--text-font);
+}
+
+.reg-log-section form .group {
+    margin-bottom: 27px;
+}
+
+.reg-log-section .form-label {
+    color: var(--darker);
+    opacity: 70%;
+    margin-bottom: 0;
+    font-weight: var(--medium);
+    font-size: 14px;
+}
+
 .reg-log-section .form-control{
+    background-color: var(--light);
+    font-size: 15px;
+    padding: 10px 15px 10px 15px;
+    border: none;
+}
+
+.reg-log-section .form-control::placeholder{
+    opacity: 80%;
+}
+
+.reg-log-section .input-group,
+.reg-log-section .input-group-text{
+    background-color: var(--light);
+}
+
+.reg-log-section .input-group{
+    border-left: var(--accent) 4px solid;
+}
+
+.reg-log-section .input-group-text{
+    padding-left: 10px;
+    padding-right: 5px;
+    border:none
+}
+
+.reg-log-section .bi{
+    font-size: 20px;
+}
+
+.forgot-password {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 70%;
+    font-weight: var(--medium);
+}
+
+.forgot-password:hover{
+    color: var(--accent);
+}
+
+.btn-sikreto-accent{
+    background-color: var(--accent);
+    font-weight: var(--medium);
+    color: white;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.oauth p {
+    font-family: var(--text-font);
+    font-weight: var(--bold);
+    font-size: 12px;
+    opacity: 70%;
+}
+
+
+.oauth img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* .reg-log-section .form-control {
     border-radius: 0;
     margin-bottom: -1px;
     padding: 15px;
 }
 
-.reg-log-section .form-control-top{
+.reg-log-section .form-control-top {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
 }
 
-.reg-log-section .form-control-bottom{
+.reg-log-section .form-control-bottom {
     border-bottom-right-radius: 10px;
 }
 
 .reg-log-section .btn {
     border-radius: 0px 8px 8px 8px;
-}
+} */

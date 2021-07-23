@@ -9,7 +9,7 @@
     --dark: #393e46;
     --accent: #00B8E4;
     --accent-neon: #04D9FF;
-    --light: #EEEEEE;
+    --light: #f4f4f4;
 
     --regular: 400;
     --medium: 500;
@@ -24,4 +24,32 @@
 .blur-text {
     text-shadow: 0 0 10px black;
     color: transparent;
+}
+
+/* sikreto titles */
+.sikreto-full-accent {
+    color: var(--accent);
+    font-family: var(--accent-font);
+    font-size: 36px;
+    margin-bottom: 0;
+}
+
+/* hover.css Rotate */
+.hvr-rotate {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.hvr-rotate:hover,
+.hvr-rotate:focus,
+.hvr-rotate:active {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
 }

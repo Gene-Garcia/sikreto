@@ -3,6 +3,10 @@
 /* font import */
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
 
+a {
+    text-decoration: none;
+}
+
 /* color variables */
 :root {
     --darker: #222831;
@@ -33,6 +37,52 @@
     font-size: 36px;
     margin-bottom: 0;
 }
+
+.sikreto-signature {
+    font-family: var(--accent-font);
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+}
+
+.sikreto-signature .sikre {
+    text-decoration: underline;
+}
+
+.sikreto-signature .t {
+    text-decoration: underline;
+}
+
+.sikreto-signature .t,
+.sikreto-signature .o {
+    color: var(--accent-neon);
+}
+
+/* Navigation bar */
+.navbar {
+    border-radius: 30px 0 30px 0;
+    margin: 3px;
+}
+
+.navbar .navbar-dark {
+    background-color: var(--darker);
+}
+
+.navbar .navbar-nav {
+    font-family: var(--accent-font);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: 20px;
+    border: 3px solid transparent;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--accent-neon);
+    border-bottom: 3px var(--accent-neon) solid;
+}
+
 
 /* hover.css Rotate */
 .hvr-rotate {

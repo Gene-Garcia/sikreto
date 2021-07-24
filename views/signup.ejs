@@ -1,11 +1,11 @@
 <%- include('./partials/header-navless') -%>
 
 <section id="register-section" class="reg-log-section">
-    <div class="row g-0 h-100">
+    <div class="parent-row row g-0 h-100">
 
         <div class="form-container col-md-8 d-flex align-items-center justify-content-center">
 
-            <div class="form-container-child">
+            <div class="form-container-child py-4 py-md-0">
                 <div class="col-2 mx-auto">
                     <img src="/images/s-accent.png" class="w-100">
                 </div>
@@ -92,15 +92,23 @@
 
         <div class="hero col-md-4">
 
-            <div class="text-center pt-5">
-                <p class="display mt-5 mb-0">Welcome back!</p>
+            <div class="text-center py-4 py-sm-5 px-4 px-lg-0">
+                <p class="display mb-0">Welcome back!</p>
 
-                <p class="sub-display mt-5 mb-0">
+                <p class="sub-display mt-3 mt-md-5 mb-0">
                     Let us anonymously share each other's sikretos
                 </p>
 
-                <a href="/signin" class="mt-5 btn btn-outline-info btn-sikreto-outline-accent w-75">
+                <a href="/signin" class="mt-3 mt-md-5 btn btn-outline-info btn-sikreto-outline-accent w-75">
                     SIGN IN
+                </a>
+
+                <p class="sub-display mt-3 mt-md-5 mb-0">
+                    Checkout out the shared sikretos by users like you.
+                </p>
+
+                <a href="/sikretos" class="mt-3 mt-md-5 btn btn-outline-info btn-sikreto-outline-accent w-75">
+                    SIKRETOS
                 </a>
             </div>
 

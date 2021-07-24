@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
 }
 
-.reg-log-section .hero .display{
+.reg-log-section .hero .display {
     font-family: var(--heading-font);
     color: white;
     font-size: 30px;
@@ -28,16 +28,15 @@
     width: 650px;
 }
 
-overflow: hidden;
-overflow: hidden;
-.reg-log-section .form-container .form-container-child {
+@media only screen and (max-width: 1000px) {
+    .reg-log-section .form-container .form-container-child {
         width: 500px;
     }
 }
 
 @media only screen and (max-width: 880px) {
     .reg-log-section .form-container .form-container-child {
-        width: 400px;
+        width: 480px;
     }
 }
 
@@ -141,7 +140,7 @@ overflow: hidden;
     padding-bottom: 9px;
 }
 
-.btn-sikreto-outline-accent{
+.btn-sikreto-outline-accent {
     background-color: transparent;
     font-weight: var(--medium);
     color: white;
@@ -154,7 +153,7 @@ overflow: hidden;
     border-radius: 27px;
 }
 
-.btn-sikreto-outline-accent:hover{
+.btn-sikreto-outline-accent:hover {
     background-color: transparent;
     color: var(--dark);
     border-color: white;

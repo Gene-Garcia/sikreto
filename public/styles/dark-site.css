@@ -60,11 +60,4 @@ body {
     margin-top: 50px
 }
 
-.sikretos .posts-sikreto .card {
-    background-color: transparent;
-    border: 2px var(--accent-neon) solid;
-    border-radius: 10px;
 
-    font-family: var(--text-font);
-    color: white;
-}

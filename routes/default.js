@@ -78,7 +78,6 @@ router.get('/sikretos', (req, res) => {
         });
 
         const sikretos = _.flattenDeep(rawSikretos)
-        console.log(sikretos);
 
         res.render('sikretos', {
             sikretos: sikretos

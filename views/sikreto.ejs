@@ -1,65 +1,59 @@
 <%- include('./auth_partials/header') -%>
 
-<h1>Welcome to your Sikreto!</h1>
+<section class="user-dashboard container">
 
-<a href="/user/logout" class="btn btn-lg btn-dark">Logout</a>
+    <h1 class="sikretos-heading text-center">Share your sikretos anytime</h1>
 
-<br><br>
-
-<div class="create-sikreto mx-5 px-5">
-
-    <form action="/user/sikreto" method="POST">
-        <div class="row gy-0 gx-2">
-            <div class="col-8">
-                <div class="input-group post-sikreto-input border border-2 rounded-3"
-                    aria-describedby="anonymousPostingHelp">
-                    <input type="password" id="sikreto-desc" name="text" class="form-control border-0"
-                        placeholder="You know what to do">
-                    <button class="btn px-2 border-0 see-password" type="button">
-                        <i class="bi bi-eye"></i>
-                    </button>
-                </div>
-                <div id="anonymousPostingHelp" class="form-text">
-                    Sikreto.com will anonymously post your secret, and not allow any public users or Sikreto accounts
-                    see your name. The date today will also be recorded along with your sikreto.
-                </div>
+    <form class="" action="/user/sikreto" method="POST">
+        <div class="col-md-9 mx-auto row gy-0 gx-2">
+            <div class="col-sm-8 mb-3 mb-sm-0">
+                <input type="text"  name="text" class="form-control w-100" placeholder="Type your sikreto here">
             </div>
 
-            <div class="col-4">
-                <input type="submit" value="Go anonymous" class="btn btn-dark w-100 border-0 post-sikreto-button">
+            <div class="col-sm-4">
+                <input type="submit" value="SHARE" class="post-sikreto btn btn-outline-info w-100">
             </div>
         </div>
     </form>
 
+</section>
 
-</div>
+<div class="my-accent-hr"></div>
 
-<div class="sikreto-list mt-5">
+<div class="posts-sikreto container">
 
-    <div class="form-check form-switch">
-        <label class="form-check-label" for="sikretos-toggle">Read you sikretos?</label>
-        <input class="form-check-input" type="checkbox" id="sikretos-toggle">
+    <div class="row gy-4 " data-masonry='{"percentPosition": true }'>
+        <% if (sikretos.length > 0) { %>
+
+        <% sikretos.forEach(e => { %>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p class="sikret blur-text">
+                        <%= e.value  %>
+                    </p>
+                    <small class="text-muted">Posted on <%= e.date %></small>
+                </div>
+            </div>
+        </div>
+
+        <% }) %>
+
+        <% } else { %>
+
+        <div class="col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p class="sikret">
+                        OMG NO Secrets recorded yet.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <% } %>
     </div>
-
-    <% if (sikretos.length > 0 ) { %>
-
-    <ul class="list-group mt-3">
-        <% sikretos.forEach(data => { %>
-
-        <li class="list-group-item">
-            <span class="blur-text"><%= data.value %></span>
-            <br>
-            <small><%= data.date %></small>
-        </li>
-
-        <% }); %>
-    </ul>
-
-    <% } else { %>
-
-    <p>No sikretos!</p>
-
-    <% } %>
 </div>
 
 <%- include('./auth_partials/footer') -%>

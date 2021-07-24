@@ -1,11 +1,59 @@
 /* styling for authenticated pages access */
 
-.create-sikreto .bi {
-
+body {
+    background-color: var(--darker);
 }
 
-.create-sikreto .post-sikreto-button ,
-.create-sikreto .post-sikreto-input input{
+.user-dashboard .sikretos-heading {
+    font-family: var(--heading-font);
+    color: white;
+    font-weight: var(--semi-bold);
+    font-size: 35px;
+
+    margin: 100px 0px 60px 0px;
+}
+
+.user-dashboard form .form-control {
+    background-color: #393E46;
+    border-color: #393E46;
+    padding: 15px 5px 15px 12px;
+    font-family: var(--text-font);
+    font-weight: var(--medium);
+    color: white;
+    transition: .3s;
+}
+
+.user-dashboard form .form-control:focus {
+    border-bottom: solid 3px var(--accent-neon);
+    box-shadow: none;
+}
+
+.user-dashboard form .form-control::placeholder {
+    color: #E5E5E5;
+    opacity: 60%;
+}
+
+.user-dashboard .post-sikreto.btn {
+    padding: 11px 0px;
+    font-weight: var(--semi-bold);
+    font-family: var(--heading-font);
+    font-size: 20px;
+    color: white;
+    border: 2px solid var(--accent-neon);
+    transition: .8s;
+}
+
+.user-dashboard .post-sikreto.btn:hover {
+    background-color: transparent;
+    color: var(--accent-neon);
+    border: 2px solid var(--accent-neon);
+    letter-spacing: 3px;
+}
+
+
+
+.create-sikreto .post-sikreto-button,
+.create-sikreto .post-sikreto-input input {
     padding: 15px 13px;
 }
 

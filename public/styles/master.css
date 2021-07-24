@@ -26,7 +26,7 @@ a {
 }
 
 .blur-text {
-    text-shadow: 0 0 10px black;
+    text-shadow: 0 0 10px white;
     color: transparent;
 }
 
@@ -83,6 +83,21 @@ a {
     border-bottom: 3px var(--accent-neon) solid;
 }
 
+/* Other global styles */
+.posts-sikreto .card {
+    background-color: transparent;
+    border: 2px var(--accent-neon) solid;
+    border-radius: 10px;
+
+    font-family: var(--text-font);
+    color: white;
+}
+
+.my-accent-hr{
+    margin: 100px auto;
+    border-bottom:  2px solid var(--accent-neon);
+    width: 30%;
+}
 
 /* hover.css Rotate */
 .hvr-rotate {

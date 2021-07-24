@@ -79,9 +79,18 @@ router.get('/sikretos', (req, res) => {
 
         const sikretos = _.flattenDeep(rawSikretos)
 
-        res.render('sikretos', {
-            sikretos: sikretos
-        });
+        // check if the request is authenticated
+        // or if a user is logged in
+        if (req.isAuthenticated()){
+            res.render('sikretos', {
+                sikretos: sikretos,
+                username: req.user.username
+            });
+        } else {
+            res.render('sikretos', {
+                sikretos: sikretos
+            });
+        }
 
     });
 });

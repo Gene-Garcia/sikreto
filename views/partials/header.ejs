@@ -45,8 +45,28 @@
         <ul class="navbar-nav d-flex w-100 ms-4 ">
 
           <li class="nav-item me-md-auto">
-            <a class="nav-link" href="/sikretos">Sikretos</a>
+            <a class="nav-link" href="/sikretos" id="sikretos-link">Sikretos</a>
           </li>
+
+          <% if (locals.username) { %>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/user/sikreto" id="sikretos-link">
+              <span class="text-accent">SH</span><span>ikreto</span>
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Welcome, <%= username %>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+            </ul>
+          </li>
+
+          <% } else { %>
 
           <li class="nav-item">
             <a class="nav-link" href="/signin">Sign In</a>
@@ -55,6 +75,8 @@
           <li class="nav-item">
             <a class="nav-link" href="/signup">Sign Up</a>
           </li>
+
+          <% } %>
 
         </ul>
       </div>

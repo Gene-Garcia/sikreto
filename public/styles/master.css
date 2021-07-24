@@ -83,6 +83,11 @@ a {
     border-bottom: 3px var(--accent-neon) solid;
 }
 
+.navbar .dropdown .dropdown-item {
+    font-family: var(--heading-font);
+    font-size: 15px;
+}
+
 /* Other global styles */
 .posts-sikreto .card {
     background-color: transparent;
@@ -97,6 +102,10 @@ a {
     margin: 100px auto;
     border-bottom:  2px solid var(--accent-neon);
     width: 30%;
+}
+
+.text-accent {
+    color: var(--accent-neon);
 }
 
 /* hover.css Rotate */

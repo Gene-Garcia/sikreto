@@ -1,3 +1,70 @@
 body {
     background-color: var(--darker);
 }
+
+/* Hero banner */
+.sikretos #heading-out {
+    background-color: var(--darker);
+    color: white;
+    width: fit-content;
+    border-radius: 8px;
+
+    position: absolute;
+    z-index: -1;
+    left: 100px;
+    top: 115px;
+}
+
+@media only screen and (max-width: 800px) {
+    .sikretos #heading-out {
+        left: 50px;
+    }
+}
+
+@media only screen and (max-width: 454px) {
+    .sikretos #heading-out {
+        left: 10px;
+    }
+}
+
+.sikretos #heading-out h1 {
+    font-family: var(--heading-font);
+    font-size: 26px;
+    font-weight: var(--bold);
+    padding: 5px 20px 5px 20px
+}
+
+.sikretos .hero {
+    background: rgb(14, 161, 190);
+    background: -moz-linear-gradient(79deg, rgba(14, 161, 190, 1) 10%, rgba(11, 140, 172, 1) 55%, rgba(0, 65, 106, 1) 100%);
+    background: -webkit-linear-gradient(79deg, rgba(14, 161, 190, 1) 10%, rgba(11, 140, 172, 1) 55%, rgba(0, 65, 106, 1) 100%);
+    background: linear-gradient(79deg, rgba(14, 161, 190, 1) 10%, rgba(11, 140, 172, 1) 55%, rgba(0, 65, 106, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0ea1be", endColorstr="#00416a", GradientType=1);
+
+    position: relative;
+    z-index: -2;
+
+    margin-top: 70px;
+    padding-right: 100px;
+
+    overflow: hidden;
+    height: 170px;
+}
+
+.sikretos .hero img {
+    width: 400px;
+    object-position: 0px -25px;
+}
+
+.sikretos .posts-sikreto {
+    margin-top: 50px
+}
+
+.sikretos .posts-sikreto .card {
+    background-color: transparent;
+    border: 2px var(--accent-neon) solid;
+    border-radius: 10px;
+
+    font-family: var(--text-font);
+    color: white;
+}

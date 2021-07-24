@@ -28,8 +28,9 @@
     width: 650px;
 }
 
-@media only screen and (max-width: 1200px) {
-    .reg-log-section .form-container .form-container-child {
+overflow: hidden;
+overflow: hidden;
+.reg-log-section .form-container .form-container-child {
         width: 500px;
     }
 }

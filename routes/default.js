@@ -9,6 +9,11 @@ const passport = require('passport');
 // db models
 const Account = require('mongoose').model('Account');
 
+// data
+const faqs = require('../data/faqs');
+const policies = require('../data/privacy-policy');
+const tAndCs = require('../data/terms-and-conditions');
+
 // routes
 router.get('/signup', (req, res) => {
     res.render('default/signup');
@@ -81,7 +86,7 @@ router.get('/sikretos', (req, res) => {
 
         // check if the request is authenticated
         // or if a user is logged in
-        if (req.isAuthenticated()){
+        if (req.isAuthenticated()) {
             res.render('default/sikretos', {
                 sikretos: sikretos,
                 username: req.user.username
@@ -95,11 +100,23 @@ router.get('/sikretos', (req, res) => {
     });
 });
 
-router.get('/terms-and-conditions', (req, res) => res.render('default/terms-and-conditions'));
+router.get('/terms-and-conditions', (req, res) => {
+    res.render('default/terms-and-conditions', {
+        data: tAndCs.tAndCs
+    })
+});
 
-router.get('/privacy-policy', (req, res) => res.render('default/privacy-policy'));
+router.get('/privacy-policy', (req, res) => {
+    res.render('default/privacy-policy', {
+        data: policies.policies
+    })
+});
 
-router.get('/faqs', (req ,res) => res.render('default/faqs'));
+router.get('/faqs', (req, res) => {
+    res.render('default/faqs', {
+        data: faqs.faqs
+    })
+});
 
 // export router for app.js
 module.exports = router;

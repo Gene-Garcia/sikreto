@@ -12,6 +12,15 @@
           e.classList.toggle('blur-text')
         })
       });
+
+      // listener onclick of links in .other-contents (i.e., faqs, t&cs, and pp)
+      $('.other-contents .nav .nav-link').on('click', (e) => {
+        // remove other active links
+        $('.other-contents .nav .nav-link.active').removeClass('active');
+
+        // add the .active to the trigger owner
+        e.target.classList.add('active');
+      });
     </script>
 
     </body>

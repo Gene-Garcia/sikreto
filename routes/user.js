@@ -11,7 +11,7 @@ const Account = require('mongoose').model('Account');
 router.get('/sikreto', (req, res) => {
     if (!req.isAuthenticated()) res.redirect('/signin');
     else {
-        res.render('sikreto', {
+        res.render('user/sikreto', {
             sikretos: req.user.sikretos,
             username: req.user.username
         });

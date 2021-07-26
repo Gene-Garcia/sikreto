@@ -11,7 +11,7 @@ const Account = require('mongoose').model('Account');
 
 // routes
 router.get('/signup', (req, res) => {
-    res.render('signup');
+    res.render('default/signup');
 });
 
 router.post('/signup', (req, res) => {
@@ -39,7 +39,7 @@ router.post('/signup', (req, res) => {
 });
 
 router.get('/signin', (req, res) => {
-    res.render('signin');
+    res.render('default/signin');
 });
 
 router.post('/signin', (req, res, next) => {
@@ -82,12 +82,12 @@ router.get('/sikretos', (req, res) => {
         // check if the request is authenticated
         // or if a user is logged in
         if (req.isAuthenticated()){
-            res.render('sikretos', {
+            res.render('default/sikretos', {
                 sikretos: sikretos,
                 username: req.user.username
             });
         } else {
-            res.render('sikretos', {
+            res.render('default/sikretos', {
                 sikretos: sikretos
             });
         }

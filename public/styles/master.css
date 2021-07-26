@@ -80,8 +80,12 @@ a {
     border: 3px solid transparent;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
+.navbar-dark .navbar-nav .nav-link:hover{
     color: var(--accent-neon);
+    border-bottom: 3px var(--accent-neon) solid;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
     border-bottom: 3px var(--accent-neon) solid;
 }
 

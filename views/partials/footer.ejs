@@ -11,6 +11,18 @@
       integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
     </script>
 
+    <script>
+      // toggle text blur in viewing secrets
+      $('.user-dashboard p.sikret').toArray().forEach(e => {
+        e.addEventListener('mouseover', function () {
+          e.classList.toggle('blur-text')
+        })
+        e.addEventListener('mouseout', function () {
+          e.classList.toggle('blur-text')
+        })
+      });
+    </script>
+
     </body>
 
     </html>

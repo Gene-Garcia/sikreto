@@ -1,4 +1,6 @@
-<%- include('./auth_partials/header') -%>
+<%- include('./partials/headers/auth') -%>
+
+<%- include('./partials/nav_partials/navbar') -%>
 
 <section class="user-dashboard container">
 
@@ -7,7 +9,7 @@
     <form class="" action="/user/sikreto" method="POST">
         <div class="col-md-9 mx-auto row gy-0 gx-2">
             <div class="col-sm-8 mb-3 mb-sm-0">
-                <input type="text"  name="text" class="form-control w-100" placeholder="Type your sikreto here">
+                <input type="text" name="text" class="form-control w-100" placeholder="Type your sikreto here">
             </div>
 
             <div class="col-sm-4">
@@ -16,44 +18,45 @@
         </div>
     </form>
 
+
+    <div class="my-accent-hr"></div>
+
+    <div class="posts-sikreto">
+
+        <div class="row gy-4 " data-masonry='{"percentPosition": true }'>
+            <% if (sikretos.length > 0) { %>
+
+            <% sikretos.forEach(e => { %>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="sikret blur-text">
+                            <%= e.value  %>
+                        </p>
+                        <small class="text-muted">Posted on <%= e.date %></small>
+                    </div>
+                </div>
+            </div>
+
+            <% }) %>
+
+            <% } else { %>
+
+            <div class="col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="sikret">
+                            OMG NO Secrets recorded yet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <% } %>
+        </div>
+    </div>
+
 </section>
 
-<div class="my-accent-hr"></div>
-
-<div class="posts-sikreto container">
-
-    <div class="row gy-4 " data-masonry='{"percentPosition": true }'>
-        <% if (sikretos.length > 0) { %>
-
-        <% sikretos.forEach(e => { %>
-
-        <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <p class="sikret blur-text">
-                        <%= e.value  %>
-                    </p>
-                    <small class="text-muted">Posted on <%= e.date %></small>
-                </div>
-            </div>
-        </div>
-
-        <% }) %>
-
-        <% } else { %>
-
-        <div class="col-12">
-            <div class="card h-100">
-                <div class="card-body">
-                    <p class="sikret">
-                        OMG NO Secrets recorded yet.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <% } %>
-    </div>
-</div>
-
-<%- include('./auth_partials/footer') -%>
+<%- include('./partials/footer') -%>

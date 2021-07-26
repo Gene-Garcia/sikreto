@@ -95,5 +95,11 @@ router.get('/sikretos', (req, res) => {
     });
 });
 
+router.get('/terms-and-conditions', (req, res) => res.render('default/terms-and-conditions'));
+
+router.get('/privacy-policy', (req, res) => res.render('default/privacy-policy'));
+
+router.get('/faqs', (req ,res) => res.render('default/faqs'));
+
 // export router for app.js
 module.exports = router;

@@ -118,5 +118,7 @@ router.get('/faqs', (req, res) => {
     })
 });
 
+
+
 // export router for app.js
 module.exports = router;

@@ -59,7 +59,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://localhost:3000/auth/google/sikreto" // create anothe file for auth
+    callbackURL: process.env.GOOGLE_AUTH_CB || "https://localhost:3000/auth/google/sikreto" // create anothe file for auth
   },
   function(accessToken, refreshToken, profile, cb) {
     // findOrCreate is not a mongoose method
@@ -78,7 +78,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: "https://localhost:3000/auth/fb/sikreto",
+    callbackURL: process.env.FACEBOOK_AUTH_CB || "https://localhost:3000/auth/fb/sikreto",
     profileFields: ['id', 'displayName', 'name', 'email']
   },
   function(accessToken, refreshToken, profile, cb) {

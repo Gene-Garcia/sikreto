@@ -106,5 +106,6 @@ app.use('/user', require(`${__dirname}/routes/user`))
 
 // Listener and HTTPS server creation
 const port = process.env.PORT || 3000;
-const server = https.createServer({key: key, cert: cert }, app);
-server.listen(port, () => { console.log('Application listening to port ' + port + '. https://localhost:3000/') });
+// const server = https.createServer({key: key, cert: cert }, app);
+// server.listen(port, () => { console.log('Application listening to port ' + port + '. https://localhost:3000/') });
+app.listen(port, () => console.log('Application started and listening to port ' + port));

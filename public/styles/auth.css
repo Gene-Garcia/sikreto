@@ -4,6 +4,10 @@ body {
     background-color: var(--darker);
 }
 
+.user-dashboard{
+    min-height: 780px;
+}
+
 .user-dashboard .sikretos-heading {
     font-family: var(--heading-font);
     color: white;

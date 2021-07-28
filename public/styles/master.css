@@ -25,12 +25,9 @@ a {
     --text-font: 'Roboto', sans-serif;
 }
 
-.blur-text {
-    text-shadow: 0 0 10px white;
-    color: transparent;
+.content{
+    height: 100vh;
 }
-
-
 
 /* sikreto titles */
 .sikreto-full-accent {
@@ -94,6 +91,33 @@ a {
     font-size: 15px;
 }
 
+/* Footer styles */
+.footer-area{
+    background-color: var(--dark);
+    padding: 70px 0;
+}
+
+.footer-area .tagline{
+    color: white;
+    font-family: var(--accent-font);
+    font-size: 15px;
+}
+
+.footer-area .footer-link {
+    color: #d7d8da;
+    text-decoration: none;
+    font-family: var(--heading-font);
+    font-weight: var(--medium);
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-area .footer-link:hover{
+    color: var(--accent);
+    opacity: 80%;
+}
+
 /* Other global styles */
 .posts-sikreto .card {
     background-color: transparent;
@@ -112,6 +136,11 @@ a {
 
 .text-accent {
     color: var(--accent-neon);
+}
+
+.blur-text {
+    text-shadow: 0 0 10px white;
+    color: transparent;
 }
 
 /* hover.css Rotate */

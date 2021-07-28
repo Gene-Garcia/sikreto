@@ -5,14 +5,15 @@ body {
 }
 
 .user-dashboard{
-    min-height: 780px;
+    min-height: 760px;
+    padding-bottom: 100px;
 }
 
 .user-dashboard .sikretos-heading {
     font-family: var(--heading-font);
     color: white;
     font-weight: var(--semi-bold);
-    font-size: 35px;
+    font-size: 30px;
 
     margin: 100px 0px 60px 0px;
 }
@@ -20,11 +21,12 @@ body {
 .user-dashboard form .form-control {
     background-color: #393E46;
     border-color: #393E46;
-    padding: 15px 5px 15px 12px;
+    padding: 13px 5px 13px 12px;
     font-family: var(--text-font);
     font-weight: var(--medium);
     color: white;
     transition: .3s;
+    font-size: 14px;
 }
 
 .user-dashboard form .form-control:focus {
@@ -35,14 +37,18 @@ body {
 .user-dashboard form .form-control::placeholder {
     color: #E5E5E5;
     opacity: 60%;
+    font-size: 13px;
 }
 
 .user-dashboard .post-sikreto.btn {
-    padding: 11px 0px;
+    padding: 10px 0px;
     font-weight: var(--semi-bold);
     font-family: var(--heading-font);
-    font-size: 20px;
+    font-size: 17px;
     color: white;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     border: 2px solid var(--accent-neon);
     transition: .8s;
 }

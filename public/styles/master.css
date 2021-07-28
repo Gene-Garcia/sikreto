@@ -39,7 +39,7 @@ a {
 
 .sikreto-signature {
     font-family: var(--accent-font);
-    font-size: 32px;
+    font-size: 28px;
     color: white;
     text-decoration: none;
 }
@@ -59,8 +59,8 @@ a {
 
 /* Navigation bar */
 .navbar {
-    border-radius: 30px 0 30px 0;
-    margin: 3px;
+    /* border-radius: 30px 0 30px 0;
+    margin: 3px; */
 }
 
 .navbar .navbar-dark {
@@ -73,7 +73,7 @@ a {
 
 .navbar-dark .navbar-nav .nav-link {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     border: 3px solid transparent;
 }
 
@@ -111,11 +111,11 @@ a {
     display: block;
     font-size: 16px;
     margin-bottom: 10px;
+    transition: .2s;
 }
 
 .footer-area .footer-link:hover{
-    color: var(--accent);
-    opacity: 80%;
+    color: var(--accent-neon);
 }
 
 /* Other global styles */

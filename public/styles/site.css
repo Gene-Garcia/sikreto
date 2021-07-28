@@ -24,7 +24,8 @@ body{
 .reg-log-section .hero .sub-display {
     font-family: var(--text-font);
     color: white;
-    font-size: 18px;
+    opacity: 90%;
+    font-size: 16px;
     font-weight: var(--regular);
 }
 
@@ -149,9 +150,9 @@ body{
     font-weight: var(--medium);
     color: white;
     letter-spacing: 1px;
-    font-size: 14px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    font-size: 13px;
+    padding-top: 13px;
+    padding-bottom: 13px;
 
     border: white solid 1px;
     border-radius: 27px;

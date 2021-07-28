@@ -29,9 +29,9 @@ body {
 
 .sikretos #heading-out h1 {
     font-family: var(--heading-font);
-    font-size: 26px;
+    font-size: 24px;
     font-weight: var(--bold);
-    padding: 5px 20px 5px 20px
+    padding: 5px 18px 5px 18px
 }
 
 .sikretos .hero {
@@ -62,5 +62,6 @@ body {
 
 .sikretos{
     min-height: 800px;
+    padding-bottom: 20px;
 }
 

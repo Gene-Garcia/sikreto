@@ -1,0 +1,77 @@
+<%- include('../partials/headers/dark') -%>
+<%- include('../partials/nav_partials/navbar') -%>
+
+<section id="contact" class="contact container">
+
+    <div class="row gy-0 gx-5">
+        <div class="col-md-4 py-4">
+            <div class="card-body h-100 contact-details">
+
+                <div class="d-flex flex-column h-100">
+                    <div class="top">
+                        <h1 class="section-heading">Connect</h1>
+
+                        <p class="message">
+                            sikreto aims to improve its services through our user’s feedback
+                        </p>
+                    </div>
+
+                    <div class="bottom mt-auto">
+                        <p class="head">email</p>
+                        <p class="description">sikreto.support@gmail.com</p>
+
+                        <p class="head">social</p>
+                        <p class="description">sikreto.support@gmail.com</p>
+
+                        <p class="head">address</p>
+                        <p class="description mb-0">sikreto.support@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-8 py-4">
+            <div class="feedback-form card-body h-100">
+                <h1 class="section-heading">Give us your feedback</h1>
+
+                <form action="/contact" method="POST"> 
+                    <div class="input-container">
+                        <select name="category" id="category" class="form-select dark-input" aria-label="Default select example" required>
+                            <option value="" selected>Select a category</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="concern">Concern</option>
+                            <option value="question">Question</option>
+                        </select>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" class="form-control dark-input" required>
+                    </div>
+
+                    <div class="input-container">
+                        <textarea id="message" name="message" placeholder="Some text here" class="form-control dark-input"
+                            rows="5" required></textarea>
+                    </div>
+
+                    <div class="input-container">
+                        <button type="button" onclick='clearContactForm()' class="btn btn-link">Clear</button>
+                        <input type="submit" value="Ask" class="btn btn-secondary my-btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script>
+    function clearContactForm() {
+        document.getElementById('category').value = '';
+        document.getElementById('message').value = '';
+        document.getElementById('subject').value = '';
+    }
+</script>
+
+<%- include('../partials/footer_partials/dark') -%>
+<%- include('../partials/footer') -%>

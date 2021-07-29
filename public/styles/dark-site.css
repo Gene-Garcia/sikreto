@@ -60,8 +60,114 @@ body {
     margin-top: 50px
 }
 
-.sikretos{
+.sikretos {
     min-height: 800px;
     padding-bottom: 20px;
 }
 
+.contact {
+    padding: 50px 0 60px 0;
+    height: 100vh;
+}
+
+@media only screen and (max-width: 844px){
+    .contact {
+        height: fit-content;
+    }
+}
+
+.contact .contact-details,
+.contact .feedback-form {
+    padding: 20px;
+}
+
+.contact .section-heading {
+    color: white;
+    font-weight: var(--bold);
+    font-family: var(--heading-font);
+    font-size: 34px;
+}
+
+.contact .contact-details .message {
+    margin-bottom: 18px;
+    font-weight: var(--medium);
+    opacity: 80%;
+    color: white
+}
+
+.contact .contact-details .head,
+.contact .contact-details .description {
+    color: white;
+    font-family: var(--text-font);
+}
+
+.contact .contact-details .head {
+    margin-bottom: 3px;
+    font-size: 22px;
+    font-weight: var(--medium);
+}
+
+.contact .contact-details .description {
+    margin-bottom: 18px;
+    font-weight: var(--medium);
+    opacity: 80%;
+}
+
+.contact .feedback-form {
+    box-shadow: 9px 9px 19px 4px rgb(0, 0, 0, .5);
+    border-radius: 5px;
+}
+
+.contact form {
+    margin-top: 25px;
+}
+
+.contact .feedback-form .input-container {
+    margin-bottom: 35px;
+}
+
+.contact .feedback-form .input-container .dark-input {
+    background-color: var(--darker);
+    color: white;
+    font-family: var(--text-font);
+    font-weight: var(--medium);
+    opacity: 90%;
+
+    border: none;
+    border-bottom: 4px solid var(--dark);
+}
+
+.contact .feedback-form .input-container .dark-input:focus{
+    box-shadow: none;
+}
+
+.contact .form-select.dark-input,
+.contact .form-select option {
+    opacity: 80%;
+}
+
+.contact .my-btn {
+    font-family: var(--text-font);
+    font-weight: var(--semi-bold);
+    background-color: var(--dark);
+    color: white;
+    font-size: 16px;
+    padding: 7px 30px;
+    border: none;
+    margin-bottom: 0;
+}
+
+.contact .my-btn:hover {
+    background-color: #6c757d;
+}
+
+.contact .btn-link{
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: var(--medium);
+    font-family: var(--text-font);
+}
+
+.contact .btn-link:focus{
+    box-shadow: var(--dark);
+}

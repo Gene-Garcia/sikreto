@@ -118,6 +118,9 @@ router.get('/faqs', (req, res) => {
     })
 });
 
+router.get('/contact', (req, res) => {
+    res.render('default/contact')
+})
 
 
 // export router for app.js

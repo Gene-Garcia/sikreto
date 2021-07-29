@@ -8,6 +8,7 @@ const passport = require('passport');
 
 // db models
 const Account = require('mongoose').model('Account');
+const Contact = require('mongoose').model('Contact');
 
 // data
 const faqs = require('../data/faqs');
@@ -122,6 +123,26 @@ router.get('/contact', (req, res) => {
     res.render('default/contact')
 })
 
+router.post('/contact', (req, res) => {
+
+    // add validation and empty fields checker
+
+    const contact = new Contact({
+        category: req.body.category,
+        subject: req.body.subject,
+        message: req.body.message
+    })
+    contact.save((err) => {
+        if (err) {
+            console.log(err);
+            res.render('default/contact')
+        } else {
+            console.log('new contact/feedback created');
+            res.redirect('/sikretos')
+        }
+    })
+
+})
 
 // export router for app.js
 module.exports = router;

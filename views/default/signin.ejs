@@ -1,102 +1,143 @@
 <%- include('../partials/headers/light') -%>
 
 <section id="login-section" class="reg-log-section">
-    <div class="row g-0 h-100">
+  <div class="row g-0 h-100">
+    <div class="hero col-md-4 px-3">
+      <div class="hero-child text-center">
+        <p class="display mb-0">Hello, mga ka-sikretos</p>
 
-        <div class="hero col-md-4">
+        <p class="sub-display mt-3 mt-md-5 mb-0">
+          Create an account to start saving your sikretos.
+        </p>
 
-            <div class="text-center py-4 py-sm-5 px-4 px-lg-0">
-                <p class="display mb-0">Hello, mga ka-sikretos</p>
+        <a
+          href="/signup"
+          class="
+            mt-3 mt-md-5
+            btn btn-outline-info btn-sikreto-outline-accent
+            w-75
+          "
+        >
+          SIGN UP
+        </a>
 
-                <p class="sub-display mt-3 mt-md-5 mb-0">
-                    Create an account to start saving your sikretos.
-                </p>
+        <p class="sub-display mt-3 mt-md-5 mb-0">
+          Checkout out the shared sikretos by users like you.
+        </p>
 
-                <a href="/signup" class="mt-3 mt-md-5 btn btn-outline-info btn-sikreto-outline-accent w-75">
-                    SIGN UP
-                </a>
+        <a
+          href="/sikretos"
+          class="
+            mt-3 mt-md-5
+            mb-0
+            btn btn-outline-info btn-sikreto-outline-accent
+            w-75
+          "
+        >
+          SIKRETOS
+        </a>
+      </div>
 
-                <p class="sub-display mt-3 mt-md-5 mb-0">
-                    Checkout out the shared sikretos by users like you.
-                </p>
+      <div class="hero-child legal text-center">
+        <a
+          href="/terms-and-conditions"
+          target="_blank"
+          class="sub-display link"
+        >
+          Terms & Conditions
+        </a>
 
-                <a href="/sikretos" class="mt-3 mt-md-5 mb-0 btn btn-outline-info btn-sikreto-outline-accent w-75">
-                    SIKRETOS
-                </a>
-            </div>
-
-        </div>
-
-        <div class="form-container col-md-8 d-flex align-items-center justify-content-center">
-
-            <div class="form-container-child mt-2 mt-sm-3">
-                <div class="col-2 mx-auto">
-                    <img src="/images/s-accent.webp" class="w-100">
-                </div>
-
-                <div class="text-center">
-                    <h1 class="sikreto-full-accent">sikreto</h1>
-
-                    <p class="sub-heading">Sign in to your sikreto</p>
-                </div>
-
-                <form class="mt-4" action="/signin" method="POST">
-
-                    <div class="group">
-                        <label for="email" class="form-label">Email</label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                                <i class="bi bi-person"></i>
-                            </span>
-                            <input type="email" name="email" class="form-control"
-                                placeholder="Enter your sikreto email">
-                        </div>
-                    </div>
-
-                    <div class="group">
-                        <label for="email" class="form-label">Password</label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                                <i class="bi bi-key"></i>
-                            </span>
-                            <input type="password" name="password" class="form-control"
-                                placeholder="Enter your sikreto password">
-                        </div>
-                        <div class="text-end">
-                            <a href="/user/forgot" class="forgot-password">Forgot password?</a>
-                        </div>
-                    </div>
-
-                    <div class="group group-bottom">
-                        <input type="submit" value="SIGN IN" class="btn btn-info btn-sikreto-accent w-100">
-                    </div>
-
-                </form>
-
-                <div class="oauth mt-5 mx-auto text-center">
-                    <p class="label">Or Sign Up Using</p>
-
-                    <div class="d-flex justify-content-center flex-row">
-                        <div>
-                            <a href="/auth/fb" class="hvr-rotate">
-                                <img src="images/facebook.webp" class="">
-                            </a>
-                        </div>
-
-                        <div>
-                            <a href="/auth/google" class="hvr-rotate">
-                                <img src="images/google.webp" class="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
+        <a href="/privacy-policy" target="_blank" class="sub-display link">
+          Privacy Policy
+        </a>
+      </div>
     </div>
-</section>
 
+    <div
+      class="
+        form-container
+        col-md-8
+        d-flex
+        align-items-center
+        justify-content-center
+      "
+    >
+      <div class="form-container-child py-4 py-md-0 mt-2 mt-sm-3">
+        <div class="col-2 mx-auto">
+          <img src="/images/s-accent.webp" class="w-100" />
+        </div>
+
+        <div class="text-center">
+          <h1 class="sikreto-full-accent">sikreto</h1>
+
+          <p class="sub-heading">Sign in to your sikreto</p>
+        </div>
+
+        <form class="mt-4" action="/signin" method="POST">
+          <div class="group">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="bi bi-person"></i>
+              </span>
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Enter your sikreto email"
+              />
+            </div>
+          </div>
+
+          <div class="group">
+            <label for="email" class="form-label">Password</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="bi bi-key"></i>
+              </span>
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                placeholder="Enter your sikreto password"
+              />
+            </div>
+            <div class="text-end">
+              <a href="/user/forgot" class="forgot-password"
+                >Forgot password?</a
+              >
+            </div>
+          </div>
+
+          <div class="group group-bottom">
+            <input
+              type="submit"
+              value="SIGN IN"
+              class="btn btn-info btn-sikreto-accent w-100"
+            />
+          </div>
+        </form>
+
+        <div class="oauth mt-5 mx-auto text-center">
+          <p class="label">Or Sign Up Using</p>
+
+          <div class="d-flex justify-content-center flex-row">
+            <div>
+              <a href="/auth/fb" class="hvr-rotate">
+                <img src="images/facebook.webp" class="" />
+              </a>
+            </div>
+
+            <div>
+              <a href="/auth/google" class="hvr-rotate">
+                <img src="images/google.webp" class="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <%- include('../partials/footer') -%>

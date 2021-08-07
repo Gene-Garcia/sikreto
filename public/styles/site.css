@@ -1,263 +1,309 @@
 /* styling for un-authenticated pages access */
 
-body{
-    background-color: #f8f9fa;
+body {
+  background-color: #f8f9fa;
 }
 
 .reg-log-section {
-    height: 100vh;
+  height: 100vh;
 }
 
 .reg-log-section .hero {
-    background-image: url("/images/accent-image-mirrored.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url("/images/accent-image-mirrored.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 40px 0;
+}
+
+@media only screen and (max-width: 769px) {
+  .reg-log-section .hero {
+    height: 40vh;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .reg-log-section .hero {
+    height: 47vh;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  .reg-log-section .hero {
+    height: 60vh;
+  }
 }
 
 .reg-log-section .hero .display {
-    font-family: var(--heading-font);
-    color: white;
-    font-size: 30px;
-    font-weight: var(--bold);
+  font-family: var(--heading-font);
+  color: white;
+  font-size: 30px;
+  font-weight: var(--bold);
 }
 
 .reg-log-section .hero .sub-display {
-    font-family: var(--text-font);
-    color: white;
-    opacity: 90%;
-    font-size: 16px;
-    font-weight: var(--regular);
+  font-family: var(--text-font);
+  color: white;
+  opacity: 90%;
+  font-size: 16px;
+  font-weight: var(--regular);
+  transition: 0.5s;
+}
+
+.reg-log-section .hero .sub-display.link {
+  color: white;
+  opacity: 100%;
+  font-weight: var(--medium);
+}
+
+.reg-log-section .hero .hero-child.legal {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 335px) {
+  .reg-log-section .hero .hero-child.legal {
+    padding: 10px 0;
+    flex-direction: column;
+  }
+}
+
+.reg-log-section .hero .sub-display.link:hover {
+  color: black;
 }
 
 .reg-log-section .form-container .form-container-child {
-    width: 650px;
+  width: 650px;
 }
 
 @media only screen and (max-width: 1000px) {
-    .reg-log-section .form-container .form-container-child {
-        width: 500px;
-    }
+  .reg-log-section .form-container .form-container-child {
+    width: 500px;
+  }
 }
 
 @media only screen and (max-width: 880px) {
-    .reg-log-section .form-container .form-container-child {
-        width: 480px;
-    }
+  .reg-log-section .form-container .form-container-child {
+    width: 480px;
+  }
 }
 
 @media only screen and (max-width: 764px) {
-    .reg-log-section .form-container .form-container-child {
-        width: 550px;
-    }
+  .reg-log-section .form-container .form-container-child {
+    width: 550px;
+  }
 }
 
 @media only screen and (max-width: 630px) {
-    .reg-log-section .form-container .form-container-child {
-        width: 450px;
-    }
+  .reg-log-section .form-container .form-container-child {
+    width: 450px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
-    .reg-log-section .form-container .form-container-child {
-        width: 400px;
-    }
+  .reg-log-section .form-container .form-container-child {
+    width: 400px;
+  }
 }
 
 @media only screen and (max-width: 415px) {
-    .reg-log-section .form-container .form-container-child {
-        width: 300px;
-    }
+  .reg-log-section .form-container .form-container-child {
+    width: 300px;
+  }
 }
 
 .reg-log-section .sub-heading {
-    font-family: var(--heading-font);
-    color: var(--darker);
-    opacity: 50%;
-    font-size: 24px;
-    font-weight: var(--bold);
+  font-family: var(--heading-font);
+  color: var(--darker);
+  opacity: 50%;
+  font-size: 24px;
+  font-weight: var(--bold);
 }
 
 .reg-log-section form {
-    font-family: var(--text-font);
+  font-family: var(--text-font);
 }
 
 .reg-log-section form .group {
-    margin-bottom: 27px;
+  margin-bottom: 27px;
 }
 
 .reg-log-section .form-label {
-    color: var(--darker);
-    opacity: 70%;
-    margin-bottom: 0;
-    font-weight: var(--medium);
-    font-size: 14px;
+  color: var(--darker);
+  opacity: 70%;
+  margin-bottom: 0;
+  font-weight: var(--medium);
+  font-size: 14px;
 }
 
 .reg-log-section .form-control {
-    background-color: var(--light);
-    font-size: 15px;
-    padding: 10px 15px 10px 15px;
-    border: none;
+  background-color: var(--light);
+  font-size: 15px;
+  padding: 10px 15px 10px 15px;
+  border: none;
 }
 
 .reg-log-section .form-control::placeholder {
-    opacity: 80%;
+  opacity: 80%;
 }
 
 .reg-log-section .input-group,
 .reg-log-section .input-group-text {
-    background-color: var(--light);
+  background-color: var(--light);
 }
 
 .reg-log-section .input-group {
-    border-left: var(--accent) 4px solid;
+  border-left: var(--accent) 4px solid;
 }
 
 .reg-log-section .input-group-text {
-    padding-left: 10px;
-    padding-right: 5px;
-    border: none
+  padding-left: 10px;
+  padding-right: 5px;
+  border: none;
 }
 
 .reg-log-section .bi {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .forgot-password {
-    color: black;
-    text-decoration: none;
-    font-size: 14px;
-    opacity: 70%;
-    font-weight: var(--medium);
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 70%;
+  font-weight: var(--medium);
 }
 
 .forgot-password:hover {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 .btn-sikreto-accent {
-    background-color: var(--accent);
-    font-weight: var(--medium);
-    color: white;
-    letter-spacing: 1px;
-    font-size: 14px;
-    padding-top: 9px;
-    padding-bottom: 9px;
+  background-color: var(--accent);
+  font-weight: var(--medium);
+  color: white;
+  letter-spacing: 1px;
+  font-size: 14px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 .btn-sikreto-outline-accent {
-    background-color: transparent;
-    font-weight: var(--medium);
-    color: white;
-    letter-spacing: 1px;
-    font-size: 13px;
-    padding-top: 13px;
-    padding-bottom: 13px;
+  background-color: transparent;
+  font-weight: var(--medium);
+  color: white;
+  letter-spacing: 1px;
+  font-size: 13px;
+  padding-top: 13px;
+  padding-bottom: 13px;
 
-    border: white solid 1px;
-    border-radius: 27px;
+  border: white solid 1px;
+  border-radius: 27px;
 }
 
 .btn-sikreto-outline-accent:hover {
-    background-color: transparent;
-    color: var(--dark);
-    border-color: white;
+  background-color: transparent;
+  color: var(--dark);
+  border-color: white;
 }
 
 .oauth p {
-    font-family: var(--text-font);
-    font-weight: var(--bold);
-    font-size: 12px;
-    opacity: 70%;
+  font-family: var(--text-font);
+  font-weight: var(--bold);
+  font-size: 12px;
+  opacity: 70%;
 }
 
 .oauth img {
-    height: 40px;
-    margin-left: 5px;
-    margin-right: 5px;
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .other-contents {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
-.other-contents .page-heading{
-    font-family: var(--heading-font);
-    font-size: 25px;
-    font-weight: var(--semi-bold);
+.other-contents .page-heading {
+  font-family: var(--heading-font);
+  font-size: 25px;
+  font-weight: var(--semi-bold);
 }
 
 .other-contents .page-content {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .other-contents .part {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
-.other-contents .part .part-heading{
-    margin-bottom: 10px;
-    font-family: var(--heading-font);
-    font-size: 18px;
-    font-weight: var(--semi-bold);
-    opacity: 80%;
+.other-contents .part .part-heading {
+  margin-bottom: 10px;
+  font-family: var(--heading-font);
+  font-size: 18px;
+  font-weight: var(--semi-bold);
+  opacity: 80%;
 }
 
 .other-contents .part .part-description {
-    font-family: var(--text-font);
-    font-weight: var(--regular);
-    font-size: 17px;
+  font-family: var(--text-font);
+  font-weight: var(--regular);
+  font-size: 17px;
 }
 
 .other-contents .nav {
-    position:fixed;
+  position: fixed;
 }
 
 @media only screen and (max-width: 768px) {
-    .other-contents .nav {
-        margin-top:20px;
-        position:unset;
-    }
+  .other-contents .nav {
+    margin-top: 20px;
+    position: unset;
+  }
 }
 
-.other-contents .nav .nav-title{
-    font-family: var(--text-font);
-    font-weight: var(--medium);
-    opacity: 80%;
-    margin-bottom: 5px;
-    padding-left: 17px;
+.other-contents .nav .nav-title {
+  font-family: var(--text-font);
+  font-weight: var(--medium);
+  opacity: 80%;
+  margin-bottom: 5px;
+  padding-left: 17px;
 }
 
-.other-contents .nav .nav-link{
-    font-family: var(--text-font);
-    padding-left: 0;
-    font-size: 15px;
-    color: var(--dark);
-    font-weight: var(--regular);
-    opacity: 80%;
+.other-contents .nav .nav-link {
+  font-family: var(--text-font);
+  padding-left: 0;
+  font-size: 15px;
+  color: var(--dark);
+  font-weight: var(--regular);
+  opacity: 80%;
 }
 
-
-.other-contents .nav .nav-link .bi{
-    color: transparent;
+.other-contents .nav .nav-link .bi {
+  color: transparent;
 }
 
-.other-contents .nav .nav-link.active .bi{
-    color: var(--accent-neon);
+.other-contents .nav .nav-link.active .bi {
+  color: var(--accent-neon);
 }
 
-.other-contents .nav .nav-link.active:hover{
-    text-decoration: none;
+.other-contents .nav .nav-link.active:hover {
+  text-decoration: none;
 }
 
-.other-contents .nav .nav-link.active:hover .bi{
-    color: var(--accent-neon);
+.other-contents .nav .nav-link.active:hover .bi {
+  color: var(--accent-neon);
 }
 
-.other-contents .nav .nav-link:hover .bi{
-    color: black;
+.other-contents .nav .nav-link:hover .bi {
+  color: black;
 }
 
-.other-contents .nav .nav-link:hover{
-    color: var(--accent-neon);
+.other-contents .nav .nav-link:hover {
+  color: var(--accent-neon);
 }

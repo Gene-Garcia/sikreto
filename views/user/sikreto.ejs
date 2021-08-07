@@ -1,74 +1,72 @@
 <%- include('../partials/headers/auth') -%>
 
 <!-- Masonry For Adaptive Card Layout -->
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
-</script>
+<script
+  src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+  integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+  crossorigin="anonymous"
+  async
+></script>
 
 <%- include('../partials/nav_partials/navbar') -%>
 
-
-
 <section class="user-dashboard container">
+  <h1 class="sikretos-heading text-center">Share your sikretos anytime</h1>
 
-    <h1 class="sikretos-heading text-center">Share your sikretos anytime</h1>
+  <form class="" action="/user/sikreto" method="POST">
+    <div class="col-md-9 mx-auto row gy-0 gx-2">
+      <div class="col-sm-8 mb-3 mb-sm-0">
+        <input
+          type="text"
+          name="text"
+          class="form-control w-100"
+          placeholder="Type your sikreto here"
+        />
+      </div>
 
-    <form class="" action="/user/sikreto" method="POST">
-        <div class="col-md-9 mx-auto row gy-0 gx-2">
-            <div class="col-sm-8 mb-3 mb-sm-0">
-                <input type="text" name="text" class="form-control w-100" placeholder="Type your sikreto here">
-            </div>
-
-            <div class="col-sm-4">
-                <input type="submit" value="SHARE" class="post-sikreto btn btn-outline-info w-100">
-            </div>
-        </div>
-    </form>
-
-
-    <div class="my-accent-hr"></div>
-
-    <div class="posts-sikreto">
-
-        <div class="row gy-4 " data-masonry='{"percentPosition": true }'>
-            <% if (sikretos.length > 0) { %>
-
-            <% sikretos.forEach(e => { %>
-
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <p class="sikret blur-text">
-                            <%= e.value  %>
-                        </p>
-                        <small class="text-muted">Posted on <%= e.date %></small>
-                    </div>
-                </div>
-            </div>
-
-            <% }) %>
-
-            <% } else { %>
-
-            <div class="col-12">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <p class="sikret">
-                            OMG NO Secrets recorded yet.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <% } %>
-        </div>
+      <div class="col-sm-4">
+        <input
+          type="submit"
+          value="SHARE"
+          class="post-sikreto btn btn-outline-info w-100"
+        />
+      </div>
     </div>
+  </form>
 
+  <div class="my-accent-hr"></div>
+
+  <div class="posts-sikreto">
+    <div class="row gy-4" data-masonry='{"percentPosition": true }'>
+      <% if (sikretos.length > 0) { %> <% sikretos.forEach(e => { %>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="sikret blur-text"><%= e.value %></p>
+            <small class="text-muted">Posted on <%= e.date %></small>
+          </div>
+        </div>
+      </div>
+
+      <% }) %> <% } else { %>
+
+      <div class="col-12">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="sikret">OMG NO Secrets recorded yet.</p>
+          </div>
+        </div>
+      </div>
+
+      <% } %>
+    </div>
+  </div>
 </section>
 
 <script>
-    $('#shikreto-link').addClass('active');
+  $("#shikreto-link").addClass("active");
 </script>
 
-<%- include('../partials/footer_partials/dark') -%>
-<%- include('../partials/footer') -%>
+<%- include('../partials/footer_partials/dark') -%> <%-
+include('../partials/footer') -%>

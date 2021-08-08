@@ -1,10 +1,10 @@
 require("dotenv").config();
 
 // creating a secure connection
-const fs = require("fs");
-const https = require("https");
-const key = fs.readFileSync("./key.pem");
-const cert = fs.readFileSync("./cert.pem");
+// const fs = require("fs");
+// const https = require("https");
+// const key = fs.readFileSync("./key.pem");
+// const cert = fs.readFileSync("./cert.pem");
 
 // packages
 const express = require("express");

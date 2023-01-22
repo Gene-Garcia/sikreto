@@ -129,6 +129,8 @@ app.use("/user", require(`${__dirname}/routes/user`));
 const port = process.env.PORT || 3000;
 // const server = https.createServer({key: key, cert: cert }, app);
 // server.listen(port, () => { console.log('Application listening to port ' + port + '. https://localhost:3000/') });
-app.listen(port, () =>
-  console.log("Application started and listening to port " + port)
-);
+app.listen(port, () => {
+  console.log("Application started and listening to port " + port);
+  console.log(process.env.GOOGLE_CLIENT_ID);
+  console.log(process.env.FACEBOOK_APP_ID);
+});
